@@ -21,7 +21,7 @@ function App() {
    <div>
   {/* HEADING */}
   <h1
-    className="text-4xl md:text-5xl font-bold leading-tight opacity-0 animate-slide-up"
+    className="text-4xl md:text-5xl font-bold mt-4 leading-tight opacity-0 animate-slide-up"
     style={{ animationDelay: "0s" }}
   >
     Welcome to the <span className="text-[#C9A24D]">Interior Studio</span>
