@@ -1,0 +1,204 @@
+@import "tailwindcss";
+
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 1.2s ease-out forwards;
+}
+
+
+.animate-hidden {
+  opacity: 0;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.9s ease-out forwards;
+}
+
+.animate-slide-right {
+  animation: slideRight 0.9s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* ================= PROCESS BOX ================= */
+.process-box {
+  position: relative;
+}
+
+/* ================= BORDER BASE ================= */
+.border {
+  position: absolute;
+  background: linear-gradient(90deg, #c9a24d, #f6e7b5, #c9a24d);
+  box-shadow: 0 0 18px rgba(201, 162, 77, 0.9);
+  transition: transform 1.4s ease;
+}
+
+/* TOP & BOTTOM */
+.border.top,
+.border.bottom {
+  height: 4px;
+  width: 100%;
+  transform: scaleX(0);
+}
+
+/* LEFT & RIGHT */
+.border.left,
+.border.right {
+  width: 4px;
+  height: 100%;
+  transform: scaleY(0);
+}
+
+/* Positions */
+.border.top { top: 0; left: 0; transform-origin: left; }
+.border.right { top: 0; right: 0; transform-origin: top; }
+.border.bottom { bottom: 0; left: 0; transform-origin: right; }
+.border.left { top: 0; left: 0; transform-origin: bottom; }
+
+/* ================= SCROLL ANIMATION ================= */
+.animate-border .border.top {
+  transform: scaleX(1);
+}
+
+.animate-border .border.right {
+  transform: scaleY(1);
+  transition-delay: 0.5s;
+}
+
+.animate-border .border.bottom {
+  transform: scaleX(1);
+  transition-delay: 1s;
+}
+
+.animate-border .border.left {
+  transform: scaleY(1);
+  transition-delay: 1.5s;
+}
+
+/* ================= HOVER REPLAY ================= */
+.process-box:hover .border {
+  transform: scale(0);
+  transition-delay: 0s;
+}
+
+.process-box:hover .border.top {
+  transform: scaleX(1);
+}
+
+.process-box:hover .border.right {
+  transform: scaleY(1);
+  transition-delay: 0.4s;
+}
+
+.process-box:hover .border.bottom {
+  transform: scaleX(1);
+  transition-delay: 0.8s;
+}
+
+.process-box:hover .border.left {
+  transform: scaleY(1);
+  transition-delay: 1.2s;
+}
+
+/* ================= LARGE CORNER DOTS ================= */
+
+
+
+
+/* Show dots on scroll & hover */
+.animate-border .dot,
+.process-box:hover .dot {
+  opacity: 1;
+}
+
+
+.thecube {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  transform: rotateZ(45deg);
+}
+
+.cube {
+  float: left;
+  width: 50%;
+  height: 50%;
+  position: relative;
+  transform: scale(1.1);
+}
+
+.cube:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #C9A24D; /* golden */
+  animation: foldCube 2.4s infinite linear both;
+  transform-origin: 100% 100%;
+}
+
+.c2 {
+  transform: scale(1.1) rotateZ(90deg);
+}
+.c3 {
+  transform: scale(1.1) rotateZ(180deg);
+}
+.c4 {
+  transform: scale(1.1) rotateZ(270deg);
+}
+
+.c2:before {
+  animation-delay: 0.3s;
+}
+.c3:before {
+  animation-delay: 0.6s;
+}
+.c4:before {
+  animation-delay: 0.9s;
+}
+
+@keyframes foldCube {
+  0%, 10% {
+    transform: perspective(140px) rotateX(-180deg);
+    opacity: 0;
+  }
+  25%, 75% {
+    transform: perspective(140px) rotateX(0deg);
+    opacity: 1;
+  }
+  90%, 100% {
+    transform: perspective(140px) rotateY(180deg);
+    opacity: 0;
+  }
+}
