@@ -1,4 +1,4 @@
-import useScrollAnimation from "./UseScrollAnimation";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 const steps = ["Concept", "Plan", "Design", "Build", "Launch"];
 
