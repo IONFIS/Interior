@@ -1,5 +1,5 @@
 import { FaPlay, FaArrowRight } from "react-icons/fa";
-import { useScrollAnimation } from "./Hooks/useScrollAnimation";
+import useScrollAnimation from "../hooks/useScrollAnimation.js";
 
 export default function AboutSection() {
   const [sectionRef, visible] = useScrollAnimation();
